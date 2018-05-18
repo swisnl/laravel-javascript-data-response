@@ -30,7 +30,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Swis\\Laravel\\JavaScriptData\\": "tests"
+            "Swis\\Laravel\\JavaScriptData\\": "tests",
+            "Swis\\Laravel\\JavaScriptData\\Stub\\": "stubs"
         }
     },
     "scripts": {
