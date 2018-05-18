@@ -18,6 +18,8 @@ return [
     |--------------------------------------------------------------------------
     |
     | The default options to use when json_encoding the data.
+    | These will be ignored if options are provided
+    | to the response macro/factory.
     |
     */
 
@@ -40,6 +42,8 @@ return [
     |--------------------------------------------------------------------------
     |
     | The default headers for the JavaScript data response.
+    | These will be ignored if headers are provided
+    | to the response macro/factory.
     |
     */
 

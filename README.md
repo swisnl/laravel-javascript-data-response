@@ -15,9 +15,104 @@ JavaScript data response macro for Laravel
 $ composer require swisnl/laravel-javascript-data-response
 ```
 
+### Laravel Service Provider
+
+If you are using Laravel < 5.5 or have disabled package auto discover, you must add the service provider to your `config/app.php` file:
+
+``` php
+'providers' => [
+    ...,
+    \Swis\Laravel\JavaScriptData\JavaScriptDataServiceProvider::class,
+],
+```
+
 ## Usage
 
-TODO
+This package adds a response macro (similar to Response::jsonp) which you can use just like any other response e.g.
+
+```php
+Response::javascriptData('translations', ['en' => ['foo' => 'bar']]);
+// or
+response()->javascriptData('translations', ['en' => ['foo' => 'bar']]);
+```
+
+This will create the following response with the appropriate headers:
+
+```javascript
+(function(){
+    window["translations"] = {
+        "en": {
+            "foo": "bar"
+        }
+    };
+})();
+```
+
+## Configuration
+
+The following is the default configuration provided by this package:
+
+``` php
+return [
+    /*
+    |--------------------------------------------------------------------------
+    | JavaScript data Namespace
+    |--------------------------------------------------------------------------
+    |
+    | The namespace to use for the JavaScript data using dot notation e.g. foo.bar will result in window["foo"]["bar"].
+    |
+    */
+
+    'namespace' => '',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default json_encode options
+    |--------------------------------------------------------------------------
+    |
+    | The default options to use when json_encoding the data.
+    | These will be ignored if options are provided
+    | to the response macro/factory.
+    |
+    */
+
+    'json_encode-options' => JSON_UNESCAPED_UNICODE,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Pretty print
+    |--------------------------------------------------------------------------
+    |
+    | Should we add JSON_PRETTY_PRINT to the json_encode options.
+    |
+    */
+
+    'pretty-print' => env('APP_ENV') !== 'production',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default response headers
+    |--------------------------------------------------------------------------
+    |
+    | The default headers for the JavaScript data response.
+    | These will be ignored if headers are provided
+    | to the response macro/factory.
+    |
+    */
+
+    'headers' => [
+        'Content-Type' => 'application/javascript; charset=utf-8',
+    ],
+];
+```
+
+### Publish Configuration
+
+If you would like to make changes to the default configuration, publish and edit the configuration file:
+
+``` bash
+php artisan vendor:publish --provider="Swis\Laravel\JavaScriptData\JavaScriptDataServiceProvider" --tag="config"
+```
 
 ## Change log
 
