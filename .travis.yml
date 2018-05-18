@@ -15,6 +15,7 @@ install:
   - travis_retry composer update ${COMPOSER_OPTS} --no-interaction --prefer-dist
 
 script:
+  - vendor/bin/php-cs-fixer fix -v --dry-run --using-cache=no
   - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.xml
 
 branches:
