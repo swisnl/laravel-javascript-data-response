@@ -16,7 +16,7 @@ install:
 
 script:
   - vendor/bin/php-cs-fixer fix -v --dry-run --using-cache=no
-  - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.xml
+  - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.xml tests
 
 branches:
   only: master
