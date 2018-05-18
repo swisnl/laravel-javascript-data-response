@@ -1,0 +1,11 @@
+# IDE
+/.idea
+
+# Composer
+composer.phar
+composer.lock
+/vendor
+
+# Tooling
+/.php_cs
+/.php_cs.cache
