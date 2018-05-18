@@ -3,6 +3,7 @@
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/swisnl/laravel-javascript-data-response.svg)](https://packagist.org/packages/swisnl/laravel-javascript-data-response)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/swisnl/laravel-javascript-data-response.svg)](https://packagist.org/packages/swisnl/laravel-javascript-data-response)
 [![Software License](https://img.shields.io/packagist/l/swisnl/laravel-javascript-data-response.svg)](LICENSE)
+[![Build Status](https://travis-ci.org/swisnl/laravel-javascript-data-response.svg?branch=master)](https://travis-ci.org/swisnl/laravel-javascript-data-response)
 
 JavaScript data response macro for Laravel
 
