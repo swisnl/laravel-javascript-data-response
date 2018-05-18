@@ -5,11 +5,11 @@ namespace Swis\Laravel\JavaScriptData;
 use Illuminate\Support\Facades\Response;
 use Orchestra\Testbench\TestCase;
 
-class JavaScriptDataResponseMacroTest extends TestCase
+class ResponseMacroTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
-        return [JavaScriptDataServiceProvider::class];
+        return [ServiceProvider::class];
     }
 
     protected function getEnvironmentSetUp($app)

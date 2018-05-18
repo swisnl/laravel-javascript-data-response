@@ -22,7 +22,7 @@ If you are using Laravel < 5.5 or have disabled package auto discover, you must 
 ``` php
 'providers' => [
     ...,
-    \Swis\Laravel\JavaScriptData\JavaScriptDataServiceProvider::class,
+    \Swis\Laravel\JavaScriptData\ServiceProvider::class,
 ],
 ```
 
@@ -111,7 +111,7 @@ return [
 If you would like to make changes to the default configuration, publish and edit the configuration file:
 
 ``` bash
-php artisan vendor:publish --provider="Swis\Laravel\JavaScriptData\JavaScriptDataServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Swis\Laravel\JavaScriptData\ServiceProvider" --tag="config"
 ```
 
 ## Change log

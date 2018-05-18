@@ -2,10 +2,10 @@
 
 namespace Swis\Laravel\JavaScriptData;
 
-use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Contracts\Routing\ResponseFactory as ResponseFactoryContract;
 use Illuminate\Http\Response;
 
-class JavaScriptDataResponseFactory
+class ResponseFactory
 {
     /**
      * @var \Illuminate\Contracts\Routing\ResponseFactory
@@ -13,18 +13,18 @@ class JavaScriptDataResponseFactory
     private $responseFactory;
 
     /**
-     * @var \Swis\Laravel\JavaScriptData\JavaScriptDataBuilder
+     * @var \Swis\Laravel\JavaScriptData\Builder
      */
-    private $javaScriptDataBuilder;
+    private $builder;
 
     /**
-     * @param \Illuminate\Contracts\Routing\ResponseFactory      $responseFactory
-     * @param \Swis\Laravel\JavaScriptData\JavaScriptDataBuilder $javaScriptDataBuilder
+     * @param \Illuminate\Contracts\Routing\ResponseFactory $responseFactory
+     * @param \Swis\Laravel\JavaScriptData\Builder          $builder
      */
-    public function __construct(ResponseFactory $responseFactory, JavaScriptDataBuilder $javaScriptDataBuilder)
+    public function __construct(ResponseFactoryContract $responseFactory, Builder $builder)
     {
         $this->responseFactory = $responseFactory;
-        $this->javaScriptDataBuilder = $javaScriptDataBuilder;
+        $this->builder = $builder;
     }
 
     /**
@@ -55,7 +55,7 @@ class JavaScriptDataResponseFactory
         }
 
         return $this->responseFactory->make(
-            $this->javaScriptDataBuilder->build($name, $data, $options),
+            $this->builder->build($name, $data, $options),
             $status,
             $headers
         );

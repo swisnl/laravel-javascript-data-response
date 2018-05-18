@@ -49,7 +49,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Swis\\Laravel\\JavaScriptData\\JavaScriptDataServiceProvider"
+                "Swis\\Laravel\\JavaScriptData\\ServiceProvider"
             ]
         }
     }

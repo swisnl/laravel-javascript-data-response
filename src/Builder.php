@@ -7,7 +7,7 @@ use Illuminate\Contracts\Support\Jsonable;
 use InvalidArgumentException;
 use JsonSerializable;
 
-class JavaScriptDataBuilder
+class Builder
 {
     /**
      * @param string $name    The name for this data using dot notation

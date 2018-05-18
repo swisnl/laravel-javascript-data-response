@@ -3,9 +3,9 @@
 namespace Swis\Laravel\JavaScriptData;
 
 use Illuminate\Support\Facades\Response;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-class JavaScriptDataServiceProvider extends ServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -24,7 +24,7 @@ class JavaScriptDataServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/javascript-data-response.php', 'javascript-data-response');
 
-        $this->app->singleton(JavaScriptDataBuilder::class);
+        $this->app->singleton(Builder::class);
     }
 
     /**
@@ -37,8 +37,8 @@ class JavaScriptDataServiceProvider extends ServiceProvider
         Response::macro(
             $name,
             function () {
-                $builder = app(JavaScriptDataBuilder::class);
-                $factory = new JavaScriptDataResponseFactory(/* @scrutinizer ignore-type */ $this, $builder);
+                $builder = app(Builder::class);
+                $factory = new ResponseFactory(/* @scrutinizer ignore-type */ $this, $builder);
 
                 return $factory->make(...\func_get_args());
             }

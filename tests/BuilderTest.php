@@ -7,14 +7,14 @@ use Swis\Laravel\JavaScriptData\Stub\ArrayableStub;
 use Swis\Laravel\JavaScriptData\Stub\JsonableStub;
 use Swis\Laravel\JavaScriptData\Stub\JsonSerializableStub;
 
-class JavaScriptDataBuilderTest extends TestCase
+class BuilderTest extends TestCase
 {
     /**
      * @test
      */
     public function itBuilds()
     {
-        $builder = new JavaScriptDataBuilder();
+        $builder = new Builder();
         $javascript = $builder->build('namespace', ['foo' => 'bar']);
 
         $this->assertEquals(
@@ -28,7 +28,7 @@ class JavaScriptDataBuilderTest extends TestCase
      */
     public function itBuildsANestedNamespace()
     {
-        $builder = new JavaScriptDataBuilder();
+        $builder = new Builder();
         $javascript = $builder->build('name.space.string', ['foo' => 'bar']);
 
         $this->assertEquals(
@@ -42,7 +42,7 @@ class JavaScriptDataBuilderTest extends TestCase
      */
     public function itBuildsWithExtraJsonEncodeOptions()
     {
-        $builder = new JavaScriptDataBuilder();
+        $builder = new Builder();
         $javascript = $builder->build('namespace', ['test' => 'tést/tëst', 'foo' => []], JSON_FORCE_OBJECT | JSON_UNESCAPED_UNICODE);
 
         $this->assertEquals(
@@ -56,7 +56,7 @@ class JavaScriptDataBuilderTest extends TestCase
      */
     public function itBuildsPrettyPrinted()
     {
-        $builder = new JavaScriptDataBuilder();
+        $builder = new Builder();
         $javascript = $builder->build('name.space', ['foo' => 'bar'], JSON_PRETTY_PRINT);
 
         $this->assertEquals(
@@ -75,7 +75,7 @@ class JavaScriptDataBuilderTest extends TestCase
      */
     public function itBuildsWithArrayableData()
     {
-        $builder = new JavaScriptDataBuilder();
+        $builder = new Builder();
         $javascript = $builder->build('namespace', new ArrayableStub());
 
         $this->assertEquals(
@@ -89,7 +89,7 @@ class JavaScriptDataBuilderTest extends TestCase
      */
     public function itBuildsWithJsonableData()
     {
-        $builder = new JavaScriptDataBuilder();
+        $builder = new Builder();
         $javascript = $builder->build('namespace', new JsonableStub());
 
         $this->assertEquals(
@@ -103,7 +103,7 @@ class JavaScriptDataBuilderTest extends TestCase
      */
     public function itBuildsWithJsonSerializableData()
     {
-        $builder = new JavaScriptDataBuilder();
+        $builder = new Builder();
         $javascript = $builder->build('namespace', new JsonSerializableStub());
 
         $this->assertEquals(
@@ -121,7 +121,7 @@ class JavaScriptDataBuilderTest extends TestCase
      */
     public function itThrowsWhenJsonEncodeFailed()
     {
-        $builder = new JavaScriptDataBuilder();
+        $builder = new Builder();
         $builder->build('namespace', "\x80");
     }
 }

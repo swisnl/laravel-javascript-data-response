@@ -5,11 +5,11 @@ namespace Swis\Laravel\JavaScriptData;
 use Illuminate\Routing\ResponseFactory;
 use Orchestra\Testbench\TestCase;
 
-class JavaScriptDataServiceProviderTest extends TestCase
+class ServiceProviderTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
-        return [JavaScriptDataServiceProvider::class];
+        return [ServiceProvider::class];
     }
 
     /**
