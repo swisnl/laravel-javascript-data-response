@@ -4,6 +4,8 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/swisnl/laravel-javascript-data-response.svg)](https://packagist.org/packages/swisnl/laravel-javascript-data-response)
 [![Software License](https://img.shields.io/packagist/l/swisnl/laravel-javascript-data-response.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/swisnl/laravel-javascript-data-response.svg?branch=master)](https://travis-ci.org/swisnl/laravel-javascript-data-response)
+[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/swisnl/laravel-javascript-data-response.svg)](https://scrutinizer-ci.com/g/swisnl/laravel-javascript-data-response/?branch=master)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/swisnl/laravel-javascript-data-response.svg)](https://scrutinizer-ci.com/g/swisnl/laravel-javascript-data-response/?branch=master)
 
 JavaScript data response macro for Laravel
 
