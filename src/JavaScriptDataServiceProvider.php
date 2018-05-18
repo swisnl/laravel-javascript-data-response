@@ -38,7 +38,7 @@ class JavaScriptDataServiceProvider extends ServiceProvider
             $name,
             function () {
                 $builder = app(JavaScriptDataBuilder::class);
-                $factory = new JavaScriptDataResponseFactory($this, $builder);
+                $factory = new JavaScriptDataResponseFactory(/* @scrutinizer ignore-type */ $this, $builder);
 
                 return $factory->make(...\func_get_args());
             }

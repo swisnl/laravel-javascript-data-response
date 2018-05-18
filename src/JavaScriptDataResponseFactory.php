@@ -8,7 +8,7 @@ use Illuminate\Http\Response;
 class JavaScriptDataResponseFactory
 {
     /**
-     * @var \Illuminate\Routing\ResponseFactory
+     * @var \Illuminate\Contracts\Routing\ResponseFactory
      */
     private $responseFactory;
 
