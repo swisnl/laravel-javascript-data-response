@@ -4,19 +4,7 @@ All notable changes to `swisnl/laravel-javascript-data-response` will be documen
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-## NEXT - YYYY-MM-DD
-
-### Added
-- Nothing
-
-### Deprecated
-- Nothing
+## 0.1.1 - 2018-05-22
 
 ### Fixed
-- Nothing
-
-### Removed
-- Nothing
-
-### Security
-- Nothing
+- Explicitly declare parameters for barryvdh/laravel-ide-helper

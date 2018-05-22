@@ -36,11 +36,22 @@ class ServiceProvider extends BaseServiceProvider
     {
         Response::macro(
             $name,
-            function () {
+            /**
+             * Return a new JavaScript data response from the application.
+             *
+             * @param string $name
+             * @param mixed  $data
+             * @param int    $status
+             * @param array  $headers
+             * @param int    $options
+             *
+             * @return \Illuminate\Http\Response
+             */
+            function (string $name, $data = [], int $status = 200, array $headers = [], $options = 0) {
                 $builder = app(Builder::class);
                 $factory = new ResponseFactory(/* @scrutinizer ignore-type */ $this, $builder);
 
-                return $factory->make(...\func_get_args());
+                return $factory->make($name, $data, $status, $headers, $options);
             }
         );
     }
