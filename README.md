@@ -141,3 +141,7 @@ If you discover any security related issues, please email security@swis.nl inste
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+## SWIS
+
+[SWIS](https://www.swis.nl) is a web agency from Leiden, the Netherlands. We love working with open source software.
