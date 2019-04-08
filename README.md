@@ -16,17 +16,6 @@ JavaScript data response macro for Laravel
 $ composer require swisnl/laravel-javascript-data-response
 ```
 
-### Laravel Service Provider
-
-If you are using Laravel < 5.5 or have disabled package auto discover, you must add the service provider to your `config/app.php` file:
-
-``` php
-'providers' => [
-    ...,
-    \Swis\Laravel\JavaScriptData\ServiceProvider::class,
-],
-```
-
 ## Usage
 
 This package adds a response macro (similar to Response::jsonp) which you can use just like any other response e.g.
