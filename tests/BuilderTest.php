@@ -114,13 +114,11 @@ class BuilderTest extends TestCase
 
     /**
      * @test
-     *
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionCode 5
-     * @expectedExceptionMessage Malformed UTF-8 characters, possibly incorrectly encoded
      */
     public function itThrowsWhenJsonEncodeFailed()
     {
+        $this->expectExceptionObject(new \InvalidArgumentException('Malformed UTF-8 characters, possibly incorrectly encoded', 5));
+
         $builder = new Builder();
         $builder->build('namespace', "\x80");
     }
