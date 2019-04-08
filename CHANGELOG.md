@@ -12,6 +12,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Changed
 - Dropped Laravel <5.5 support.
 - Dropped PHP <7.1 support.
+- Added ext-json to `composer.json`.
 
 ## 1.0.0 - 2018-09-07
 
