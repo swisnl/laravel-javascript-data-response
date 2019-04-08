@@ -6,6 +6,10 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ## [Unreleased]
 
+- Nothing
+
+## 1.1.0 - 2019-04-08
+
 ### Added
 - Added support for Laravel 5.8.
 
