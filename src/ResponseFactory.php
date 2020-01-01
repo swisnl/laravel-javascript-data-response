@@ -43,11 +43,11 @@ class ResponseFactory
         $name = ltrim(config('javascript-data-response.namespace', '').'.'.$name, '.');
 
         if (empty($headers)) {
-            $headers = (array)config('javascript-data-response.headers', []);
+            $headers = (array) config('javascript-data-response.headers', []);
         }
 
         if ($options === 0) {
-            $options = (int)config('javascript-data-response.json_encode-options', 0);
+            $options = (int) config('javascript-data-response.json_encode-options', 0);
         }
 
         if (config('javascript-data-response.pretty-print', false)) {

@@ -19,10 +19,10 @@ class ServiceProviderTest extends TestCase
     {
         $this->assertSame(
             [
-                'namespace'           => '',
+                'namespace' => '',
                 'json_encode-options' => JSON_UNESCAPED_UNICODE,
-                'pretty-print'        => env('APP_ENV') !== 'production',
-                'headers'             => [
+                'pretty-print' => env('APP_ENV') !== 'production',
+                'headers' => [
                     'Content-Type' => 'application/javascript; charset=utf-8',
                 ],
             ],
