@@ -8,6 +8,11 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 - Nothing
 
+## 1.3.0 - 2020-03-06
+
+### Added
+- Added support for Laravel 7.
+
 ## 1.2.0 - 2019-10-01
 
 ### Added
