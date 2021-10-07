@@ -2,7 +2,8 @@
 
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/swisnl/laravel-javascript-data-response.svg)](https://packagist.org/packages/swisnl/laravel-javascript-data-response)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/swisnl/laravel-javascript-data-response.svg)](https://packagist.org/packages/swisnl/laravel-javascript-data-response)
-[![Software License](https://img.shields.io/packagist/l/swisnl/laravel-javascript-data-response.svg)](LICENSE)
+[![Software License](https://img.shields.io/packagist/l/swisnl/laravel-javascript-data-response.svg)](LICENSE.md)
+[![Buy us a tree](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen.svg)](https://plant.treeware.earth/swisnl/laravel-javascript-data-response)
 [![Build Status](https://travis-ci.org/swisnl/laravel-javascript-data-response.svg?branch=master)](https://travis-ci.org/swisnl/laravel-javascript-data-response)
 [![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/swisnl/laravel-javascript-data-response.svg)](https://scrutinizer-ci.com/g/swisnl/laravel-javascript-data-response/?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/swisnl/laravel-javascript-data-response.svg)](https://scrutinizer-ci.com/g/swisnl/laravel-javascript-data-response/?branch=master)
@@ -131,6 +132,8 @@ If you discover any security related issues, please email security@swis.nl inste
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-## SWIS
+This package is [Treeware](https://treeware.earth). If you use it in production, then we ask that you [**buy the world a tree**](https://plant.treeware.earth/swisnl/laravel-javascript-data-response) to thank us for our work. By contributing to the Treeware forest you’ll be creating employment for local families and restoring wildlife habitats.
+
+## SWIS :heart: Open Source
 
 [SWIS](https://www.swis.nl) is a web agency from Leiden, the Netherlands. We love working with open source software.
