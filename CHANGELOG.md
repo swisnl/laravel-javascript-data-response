@@ -6,7 +6,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ## [Unreleased]
 
-- Nothing
+### Added
+* Added support for Laravel 9.
+
+### Removed
+* Removed support for Laravel <6.
+* Removed support for PHP <7.2.
 
 ## 1.4.0 - 2020-09-30
 
