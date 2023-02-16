@@ -6,6 +6,9 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ## [Unreleased]
 
+### Added
+* Added support for Laravel 10.
+
 ### Removed
 * Removed support for Laravel <8.
 * Removed support for PHP <7.4.
