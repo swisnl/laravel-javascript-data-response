@@ -4,8 +4,6 @@ namespace Swis\Laravel\JavaScriptData;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
-use InvalidArgumentException;
-use JsonSerializable;
 
 class Builder
 {
@@ -28,14 +26,14 @@ class Builder
             $json = json_encode($data->toArray(), $options);
         } elseif ($data instanceof Jsonable) {
             $json = $data->toJson($options);
-        } elseif ($data instanceof JsonSerializable) {
+        } elseif ($data instanceof \JsonSerializable) {
             $json = json_encode($data->jsonSerialize(), $options);
         } else {
             $json = json_encode($data, $options);
         }
 
         if (JSON_ERROR_NONE !== json_last_error()) {
-            throw new InvalidArgumentException(json_last_error_msg(), json_last_error());
+            throw new \InvalidArgumentException(json_last_error_msg(), json_last_error());
         }
 
         if ($prettyPrint) {

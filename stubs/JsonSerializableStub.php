@@ -4,7 +4,7 @@ namespace Swis\Laravel\JavaScriptData\Stub;
 
 use JsonSerializable;
 
-class JsonSerializableStub implements JsonSerializable
+class JsonSerializableStub implements \JsonSerializable
 {
     /**
      * Specify data which should be serialized to JSON.
