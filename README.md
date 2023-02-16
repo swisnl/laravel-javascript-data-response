@@ -4,7 +4,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/swisnl/laravel-javascript-data-response.svg)](https://packagist.org/packages/swisnl/laravel-javascript-data-response)
 [![Software License](https://img.shields.io/packagist/l/swisnl/laravel-javascript-data-response.svg)](LICENSE.md)
 [![Buy us a tree](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen.svg)](https://plant.treeware.earth/swisnl/laravel-javascript-data-response)
-[![Build Status](https://travis-ci.org/swisnl/laravel-javascript-data-response.svg?branch=master)](https://travis-ci.org/swisnl/laravel-javascript-data-response)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/swisnl/laravel-javascript-data-response/tests.yml?label=tests&branch=master)](https://github.com/swisnl/laravel-javascript-data-response/actions/workflows/tests.yml)
 [![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/swisnl/laravel-javascript-data-response.svg)](https://scrutinizer-ci.com/g/swisnl/laravel-javascript-data-response/?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/swisnl/laravel-javascript-data-response.svg)](https://scrutinizer-ci.com/g/swisnl/laravel-javascript-data-response/?branch=master)
 [![Made by SWIS](https://img.shields.io/badge/%F0%9F%9A%80-made%20by%20SWIS-%230737A9.svg)](https://www.swis.nl)
