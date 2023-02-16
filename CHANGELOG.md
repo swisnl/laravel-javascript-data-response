@@ -7,6 +7,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ## [Unreleased]
 
 ### Removed
+* Removed support for Laravel <8.
 * Removed support for PHP <7.4.
 
 ## [1.5.0] - 2022-02-08
