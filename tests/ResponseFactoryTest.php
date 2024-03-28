@@ -15,7 +15,7 @@ final class ResponseFactoryTest extends TestCase
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
         $builder
             ->expects($this->once())
@@ -38,7 +38,7 @@ final class ResponseFactoryTest extends TestCase
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
         $builder
             ->expects($this->once())
@@ -58,7 +58,7 @@ final class ResponseFactoryTest extends TestCase
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
         $builder
             ->expects($this->once())
@@ -76,7 +76,7 @@ final class ResponseFactoryTest extends TestCase
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
 
         $factory = new ResponseFactory($responseFactory, $builder);
@@ -92,7 +92,7 @@ final class ResponseFactoryTest extends TestCase
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
 
         $factory = new ResponseFactory($responseFactory, $builder);
@@ -108,7 +108,7 @@ final class ResponseFactoryTest extends TestCase
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
 
         $factory = new ResponseFactory($responseFactory, $builder);
@@ -147,7 +147,7 @@ final class ResponseFactoryTest extends TestCase
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
 
         $factory = new ResponseFactory($responseFactory, $builder);
@@ -166,7 +166,7 @@ final class ResponseFactoryTest extends TestCase
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
         $builder
             ->expects($this->once())
@@ -184,7 +184,7 @@ final class ResponseFactoryTest extends TestCase
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
         $builder
             ->expects($this->once())
