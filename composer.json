@@ -22,7 +22,7 @@
         "laravel/framework": "^10.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.0",
+        "laravel/pint": "^1.15",
         "orchestra/testbench": "^8.0",
         "phpunit/phpunit": "^9.5"
     },
@@ -39,8 +39,8 @@
     },
     "scripts": {
         "test": "phpunit",
-        "check-style": "php-cs-fixer fix --dry-run -v",
-        "fix-style": "php-cs-fixer fix"
+        "check-style": "pint --test",
+        "fix-style": "pint"
     },
     "config": {
         "sort-packages": true

@@ -7,6 +7,4 @@ composer.lock
 /vendor
 
 # Tooling
-/.php-cs-fixer.php
-/.php-cs-fixer.cache
 /.phpunit.result.cache
