@@ -8,6 +8,15 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 * Nothing.
 
+## [1.7.0] - 2024-03-28
+
+### Added
+* Added support for Laravel 11.
+
+### Removed
+* Removed support for Laravel <10.
+* Removed support for PHP <8.1.
+
 ## [1.6.0] - 2023-02-16
 
 ### Added
