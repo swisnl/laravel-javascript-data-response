@@ -9,18 +9,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: [ '7.4', '8.0', '8.1', '8.2' ]
-        laravel: [ '8.*', '9.*', '10.*' ]
+        php: [ '8.1', '8.2', '8.3' ]
+        laravel: [ '10.*' ]
         stability: [ prefer-stable ]
-        exclude:
-          - laravel: '8.*'
-            php: '8.2'
-          - laravel: '9.*'
-            php: '7.4'
-          - laravel: '10.*'
-            php: '7.4'
-          - laravel: '10.*'
-            php: '8.0'
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }}
 
@@ -60,6 +51,6 @@ jobs:
       - name: Upload Scrutinizer coverage
         uses: sudo-bot/action-scrutinizer@latest
         # Do not run this step on forked versions of the main repository (example: contributor forks)
-        if: matrix.laravel == '9.*' && github.repository == 'swisnl/laravel-javascript-data-response'
+        if: matrix.laravel == '10.*' && github.repository == 'swisnl/laravel-javascript-data-response'
         with:
           cli-args: "--format=php-clover coverage.clover --revision=${{ github.event.pull_request.head.sha || github.sha }}"
