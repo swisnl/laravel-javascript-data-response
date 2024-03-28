@@ -9,7 +9,7 @@ use Orchestra\Testbench\TestCase;
 class ResponseFactoryTest extends TestCase
 {
     #[Test]
-    public function itMakesAResponse()
+    public function itMakesAResponse(): void
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
@@ -30,7 +30,7 @@ class ResponseFactoryTest extends TestCase
     }
 
     #[Test]
-    public function itMakesAResponseWithDefaultNamespace()
+    public function itMakesAResponseWithDefaultNamespace(): void
     {
         $this->app['config']->set('javascript-data-response.namespace', 'foo.bar');
 
@@ -50,7 +50,7 @@ class ResponseFactoryTest extends TestCase
     }
 
     #[Test]
-    public function itMakesAResponseWithPrettyPrintOption()
+    public function itMakesAResponseWithPrettyPrintOption(): void
     {
         $this->app['config']->set('javascript-data-response.pretty-print', true);
 
@@ -70,7 +70,7 @@ class ResponseFactoryTest extends TestCase
     }
 
     #[Test]
-    public function itMakesAResponseWithDefaultStatus()
+    public function itMakesAResponseWithDefaultStatus(): void
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
@@ -86,7 +86,7 @@ class ResponseFactoryTest extends TestCase
     }
 
     #[Test]
-    public function itMakesAResponseWithCustomStatus()
+    public function itMakesAResponseWithCustomStatus(): void
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
@@ -102,7 +102,7 @@ class ResponseFactoryTest extends TestCase
     }
 
     #[Test]
-    public function itMakesAResponseWithDefaultHeaders()
+    public function itMakesAResponseWithDefaultHeaders(): void
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
@@ -136,7 +136,7 @@ class ResponseFactoryTest extends TestCase
     }
 
     #[Test]
-    public function itMakesAResponseWithCustomHeaders()
+    public function itMakesAResponseWithCustomHeaders(): void
     {
         $this->app['config']->set(
             'javascript-data-response.headers',
@@ -158,7 +158,7 @@ class ResponseFactoryTest extends TestCase
     }
 
     #[Test]
-    public function itMakesAResponseWithDefaultOptions()
+    public function itMakesAResponseWithDefaultOptions(): void
     {
         $this->app['config']->set('javascript-data-response.json_encode-options', JSON_UNESCAPED_UNICODE);
 
@@ -178,7 +178,7 @@ class ResponseFactoryTest extends TestCase
     }
 
     #[Test]
-    public function itMakesAResponseWithCustomOptions()
+    public function itMakesAResponseWithCustomOptions(): void
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
