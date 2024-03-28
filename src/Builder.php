@@ -8,13 +8,11 @@ use Illuminate\Contracts\Support\Jsonable;
 class Builder
 {
     /**
-     * @param string $name    The name for this data using dot notation
-     * @param mixed  $data    The data
-     * @param int    $options Extra json_encode options
+     * @param  string  $name  The name for this data using dot notation
+     * @param  mixed  $data  The data
+     * @param  int  $options  Extra json_encode options
      *
      * @throws \InvalidArgumentException
-     *
-     * @return string
      */
     public function build(string $name, $data, int $options = 0): string
     {
@@ -32,7 +30,7 @@ class Builder
             $json = json_encode($data, $options);
         }
 
-        if (JSON_ERROR_NONE !== json_last_error()) {
+        if (json_last_error() !== JSON_ERROR_NONE) {
             throw new \InvalidArgumentException(json_last_error_msg(), json_last_error());
         }
 

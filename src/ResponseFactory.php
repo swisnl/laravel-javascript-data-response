@@ -17,10 +17,6 @@ class ResponseFactory
      */
     private $builder;
 
-    /**
-     * @param \Illuminate\Contracts\Routing\ResponseFactory $responseFactory
-     * @param \Swis\Laravel\JavaScriptData\Builder          $builder
-     */
     public function __construct(ResponseFactoryContract $responseFactory, Builder $builder)
     {
         $this->responseFactory = $responseFactory;
@@ -30,13 +26,8 @@ class ResponseFactory
     /**
      * Return a new JavaScript data response from the application.
      *
-     * @param string $name
-     * @param mixed  $data
-     * @param int    $status
-     * @param array  $headers
-     * @param int    $options
-     *
-     * @return \Illuminate\Http\Response
+     * @param  mixed  $data
+     * @param  int  $options
      */
     public function make(string $name, $data = [], int $status = 200, array $headers = [], $options = 0): Response
     {

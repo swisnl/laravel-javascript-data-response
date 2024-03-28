@@ -29,8 +29,6 @@ class ServiceProvider extends BaseServiceProvider
 
     /**
      * Response macro for JavaScript data.
-     *
-     * @param string $name
      */
     protected function registerResponseMacro(string $name)
     {
@@ -39,12 +37,8 @@ class ServiceProvider extends BaseServiceProvider
             /**
              * Return a new JavaScript data response from the application.
              *
-             * @param string $name
-             * @param mixed  $data
-             * @param int    $status
-             * @param array  $headers
-             * @param int    $options
-             *
+             * @param  mixed  $data
+             * @param  int  $options
              * @return \Illuminate\Http\Response
              */
             function (string $name, $data = [], int $status = 200, array $headers = [], $options = 0) {
