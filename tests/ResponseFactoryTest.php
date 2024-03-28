@@ -6,7 +6,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Routing\ResponseFactory as IlluminateResponseFactory;
 use Orchestra\Testbench\TestCase;
 
-class ResponseFactoryTest extends TestCase
+final class ResponseFactoryTest extends TestCase
 {
     #[Test]
     public function itMakesAResponse(): void

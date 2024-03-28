@@ -6,7 +6,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Routing\ResponseFactory;
 use Orchestra\Testbench\TestCase;
 
-class ServiceProviderTest extends TestCase
+final class ServiceProviderTest extends TestCase
 {
     protected function getPackageProviders($app)
     {

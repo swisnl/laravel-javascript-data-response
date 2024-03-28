@@ -8,7 +8,7 @@ use Swis\Laravel\JavaScriptData\Stub\ArrayableStub;
 use Swis\Laravel\JavaScriptData\Stub\JsonableStub;
 use Swis\Laravel\JavaScriptData\Stub\JsonSerializableStub;
 
-class BuilderTest extends TestCase
+final class BuilderTest extends TestCase
 {
     #[Test]
     public function itBuilds(): void

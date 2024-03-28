@@ -6,7 +6,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Support\Facades\Response;
 use Orchestra\Testbench\TestCase;
 
-class ResponseMacroTest extends TestCase
+final class ResponseMacroTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
