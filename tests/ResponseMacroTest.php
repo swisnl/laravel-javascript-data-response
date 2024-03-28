@@ -2,9 +2,9 @@
 
 namespace Swis\Laravel\JavaScriptData;
 
-use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Support\Facades\Response;
 use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 final class ResponseMacroTest extends TestCase
 {

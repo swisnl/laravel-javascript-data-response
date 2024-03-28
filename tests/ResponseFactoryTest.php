@@ -2,9 +2,9 @@
 
 namespace Swis\Laravel\JavaScriptData;
 
-use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Routing\ResponseFactory as IlluminateResponseFactory;
 use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 final class ResponseFactoryTest extends TestCase
 {
