@@ -4,19 +4,18 @@ namespace Swis\Laravel\JavaScriptData;
 
 use Illuminate\Routing\ResponseFactory as IlluminateResponseFactory;
 use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
-class ResponseFactoryTest extends TestCase
+final class ResponseFactoryTest extends TestCase
 {
-    /**
-     * @test
-     */
-    public function itMakesAResponse()
+    #[Test]
+    public function itMakesAResponse(): void
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
         $builder
             ->expects($this->once())
@@ -30,10 +29,8 @@ class ResponseFactoryTest extends TestCase
         $this->assertSame('foo bar', $response->getContent());
     }
 
-    /**
-     * @test
-     */
-    public function itMakesAResponseWithDefaultNamespace()
+    #[Test]
+    public function itMakesAResponseWithDefaultNamespace(): void
     {
         $this->app['config']->set('javascript-data-response.namespace', 'foo.bar');
 
@@ -41,7 +38,7 @@ class ResponseFactoryTest extends TestCase
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
         $builder
             ->expects($this->once())
@@ -52,10 +49,8 @@ class ResponseFactoryTest extends TestCase
         $factory->make('namespace');
     }
 
-    /**
-     * @test
-     */
-    public function itMakesAResponseWithPrettyPrintOption()
+    #[Test]
+    public function itMakesAResponseWithPrettyPrintOption(): void
     {
         $this->app['config']->set('javascript-data-response.pretty-print', true);
 
@@ -63,7 +58,7 @@ class ResponseFactoryTest extends TestCase
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
         $builder
             ->expects($this->once())
@@ -74,16 +69,14 @@ class ResponseFactoryTest extends TestCase
         $factory->make('namespace');
     }
 
-    /**
-     * @test
-     */
-    public function itMakesAResponseWithDefaultStatus()
+    #[Test]
+    public function itMakesAResponseWithDefaultStatus(): void
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
 
         $factory = new ResponseFactory($responseFactory, $builder);
@@ -92,16 +85,14 @@ class ResponseFactoryTest extends TestCase
         $this->assertSame(200, $response->getStatusCode());
     }
 
-    /**
-     * @test
-     */
-    public function itMakesAResponseWithCustomStatus()
+    #[Test]
+    public function itMakesAResponseWithCustomStatus(): void
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
 
         $factory = new ResponseFactory($responseFactory, $builder);
@@ -110,16 +101,14 @@ class ResponseFactoryTest extends TestCase
         $this->assertSame(500, $response->getStatusCode());
     }
 
-    /**
-     * @test
-     */
-    public function itMakesAResponseWithDefaultHeaders()
+    #[Test]
+    public function itMakesAResponseWithDefaultHeaders(): void
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
 
         $factory = new ResponseFactory($responseFactory, $builder);
@@ -146,10 +135,8 @@ class ResponseFactoryTest extends TestCase
         $this->assertSame('application/javascript; charset=utf-8', $response->headers->get('content-type'));
     }
 
-    /**
-     * @test
-     */
-    public function itMakesAResponseWithCustomHeaders()
+    #[Test]
+    public function itMakesAResponseWithCustomHeaders(): void
     {
         $this->app['config']->set(
             'javascript-data-response.headers',
@@ -160,7 +147,7 @@ class ResponseFactoryTest extends TestCase
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
 
         $factory = new ResponseFactory($responseFactory, $builder);
@@ -170,10 +157,8 @@ class ResponseFactoryTest extends TestCase
         $this->assertSame('Bar', $response->headers->get('x-foo'));
     }
 
-    /**
-     * @test
-     */
-    public function itMakesAResponseWithDefaultOptions()
+    #[Test]
+    public function itMakesAResponseWithDefaultOptions(): void
     {
         $this->app['config']->set('javascript-data-response.json_encode-options', JSON_UNESCAPED_UNICODE);
 
@@ -181,7 +166,7 @@ class ResponseFactoryTest extends TestCase
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
         $builder
             ->expects($this->once())
@@ -192,16 +177,14 @@ class ResponseFactoryTest extends TestCase
         $factory->make('namespace');
     }
 
-    /**
-     * @test
-     */
-    public function itMakesAResponseWithCustomOptions()
+    #[Test]
+    public function itMakesAResponseWithCustomOptions(): void
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */
         $responseFactory = $this->app->make(IlluminateResponseFactory::class);
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Swis\Laravel\JavaScriptData\Builder $builder */
         $builder = $this->getMockBuilder(Builder::class)
-            ->setMethods(['build'])
+            ->onlyMethods(['build'])
             ->getMock();
         $builder
             ->expects($this->once())

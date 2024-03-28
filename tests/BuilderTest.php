@@ -2,17 +2,16 @@
 
 namespace Swis\Laravel\JavaScriptData;
 
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Swis\Laravel\JavaScriptData\Stub\ArrayableStub;
 use Swis\Laravel\JavaScriptData\Stub\JsonableStub;
 use Swis\Laravel\JavaScriptData\Stub\JsonSerializableStub;
 
-class BuilderTest extends TestCase
+final class BuilderTest extends TestCase
 {
-    /**
-     * @test
-     */
-    public function itBuilds()
+    #[Test]
+    public function itBuilds(): void
     {
         $builder = new Builder();
         $javascript = $builder->build('namespace', ['foo' => 'bar']);
@@ -23,10 +22,8 @@ class BuilderTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
-    public function itBuildsANestedNamespace()
+    #[Test]
+    public function itBuildsANestedNamespace(): void
     {
         $builder = new Builder();
         $javascript = $builder->build('name.space.string', ['foo' => 'bar']);
@@ -37,10 +34,8 @@ class BuilderTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
-    public function itBuildsWithExtraJsonEncodeOptions()
+    #[Test]
+    public function itBuildsWithExtraJsonEncodeOptions(): void
     {
         $builder = new Builder();
         $javascript = $builder->build('namespace', ['test' => 'tést/tëst', 'foo' => []], JSON_FORCE_OBJECT | JSON_UNESCAPED_UNICODE);
@@ -51,10 +46,8 @@ class BuilderTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
-    public function itBuildsPrettyPrinted()
+    #[Test]
+    public function itBuildsPrettyPrinted(): void
     {
         $builder = new Builder();
         $javascript = $builder->build('name.space', ['foo' => 'bar'], JSON_PRETTY_PRINT);
@@ -70,10 +63,8 @@ class BuilderTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
-    public function itBuildsWithArrayableData()
+    #[Test]
+    public function itBuildsWithArrayableData(): void
     {
         $builder = new Builder();
         $javascript = $builder->build('namespace', new ArrayableStub());
@@ -84,10 +75,8 @@ class BuilderTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
-    public function itBuildsWithJsonableData()
+    #[Test]
+    public function itBuildsWithJsonableData(): void
     {
         $builder = new Builder();
         $javascript = $builder->build('namespace', new JsonableStub());
@@ -98,10 +87,8 @@ class BuilderTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
-    public function itBuildsWithJsonSerializableData()
+    #[Test]
+    public function itBuildsWithJsonSerializableData(): void
     {
         $builder = new Builder();
         $javascript = $builder->build('namespace', new JsonSerializableStub());
@@ -112,10 +99,8 @@ class BuilderTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
-    public function itThrowsWhenJsonEncodeFailed()
+    #[Test]
+    public function itThrowsWhenJsonEncodeFailed(): void
     {
         $this->expectExceptionObject(new \InvalidArgumentException('Malformed UTF-8 characters, possibly incorrectly encoded', 5));
 

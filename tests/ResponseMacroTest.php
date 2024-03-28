@@ -4,8 +4,9 @@ namespace Swis\Laravel\JavaScriptData;
 
 use Illuminate\Support\Facades\Response;
 use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
-class ResponseMacroTest extends TestCase
+final class ResponseMacroTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
@@ -17,10 +18,8 @@ class ResponseMacroTest extends TestCase
         $app['config']->set('javascript-data-response.pretty-print', false);
     }
 
-    /**
-     * @test
-     */
-    public function itMakesAResponse()
+    #[Test]
+    public function itMakesAResponse(): void
     {
         /** @var \Illuminate\Http\Response $response */
         $response = Response::javascriptData('namespace', ['foo' => 'bar']);

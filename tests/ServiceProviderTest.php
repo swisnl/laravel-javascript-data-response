@@ -4,18 +4,17 @@ namespace Swis\Laravel\JavaScriptData;
 
 use Illuminate\Routing\ResponseFactory;
 use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
-class ServiceProviderTest extends TestCase
+final class ServiceProviderTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
         return [ServiceProvider::class];
     }
 
-    /**
-     * @test
-     */
-    public function itMergesTheConfig()
+    #[Test]
+    public function itMergesTheConfig(): void
     {
         $this->assertSame(
             [
@@ -30,10 +29,8 @@ class ServiceProviderTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
-    public function itRegistersAResponseMacro()
+    #[Test]
+    public function itRegistersAResponseMacro(): void
     {
         $this->assertTrue(ResponseFactory::hasMacro('javascriptData'));
     }
