@@ -2,14 +2,13 @@
 
 namespace Swis\Laravel\JavaScriptData;
 
+use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Routing\ResponseFactory as IlluminateResponseFactory;
 use Orchestra\Testbench\TestCase;
 
 class ResponseFactoryTest extends TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function itMakesAResponse()
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */
@@ -30,9 +29,7 @@ class ResponseFactoryTest extends TestCase
         $this->assertSame('foo bar', $response->getContent());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function itMakesAResponseWithDefaultNamespace()
     {
         $this->app['config']->set('javascript-data-response.namespace', 'foo.bar');
@@ -52,9 +49,7 @@ class ResponseFactoryTest extends TestCase
         $factory->make('namespace');
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function itMakesAResponseWithPrettyPrintOption()
     {
         $this->app['config']->set('javascript-data-response.pretty-print', true);
@@ -74,9 +69,7 @@ class ResponseFactoryTest extends TestCase
         $factory->make('namespace');
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function itMakesAResponseWithDefaultStatus()
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */
@@ -92,9 +85,7 @@ class ResponseFactoryTest extends TestCase
         $this->assertSame(200, $response->getStatusCode());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function itMakesAResponseWithCustomStatus()
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */
@@ -110,9 +101,7 @@ class ResponseFactoryTest extends TestCase
         $this->assertSame(500, $response->getStatusCode());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function itMakesAResponseWithDefaultHeaders()
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */
@@ -146,9 +135,7 @@ class ResponseFactoryTest extends TestCase
         $this->assertSame('application/javascript; charset=utf-8', $response->headers->get('content-type'));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function itMakesAResponseWithCustomHeaders()
     {
         $this->app['config']->set(
@@ -170,9 +157,7 @@ class ResponseFactoryTest extends TestCase
         $this->assertSame('Bar', $response->headers->get('x-foo'));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function itMakesAResponseWithDefaultOptions()
     {
         $this->app['config']->set('javascript-data-response.json_encode-options', JSON_UNESCAPED_UNICODE);
@@ -192,9 +177,7 @@ class ResponseFactoryTest extends TestCase
         $factory->make('namespace');
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function itMakesAResponseWithCustomOptions()
     {
         /** @var \Illuminate\Routing\ResponseFactory $responseFactory */

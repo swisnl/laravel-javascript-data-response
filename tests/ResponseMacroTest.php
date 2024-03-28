@@ -2,6 +2,7 @@
 
 namespace Swis\Laravel\JavaScriptData;
 
+use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Support\Facades\Response;
 use Orchestra\Testbench\TestCase;
 
@@ -17,9 +18,7 @@ class ResponseMacroTest extends TestCase
         $app['config']->set('javascript-data-response.pretty-print', false);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function itMakesAResponse()
     {
         /** @var \Illuminate\Http\Response $response */
