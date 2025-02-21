@@ -13,7 +13,7 @@ final class BuilderTest extends TestCase
     #[Test]
     public function itBuilds(): void
     {
-        $builder = new Builder();
+        $builder = new Builder;
         $javascript = $builder->build('namespace', ['foo' => 'bar']);
 
         $this->assertEquals(
@@ -25,7 +25,7 @@ final class BuilderTest extends TestCase
     #[Test]
     public function itBuildsANestedNamespace(): void
     {
-        $builder = new Builder();
+        $builder = new Builder;
         $javascript = $builder->build('name.space.string', ['foo' => 'bar']);
 
         $this->assertEquals(
@@ -37,7 +37,7 @@ final class BuilderTest extends TestCase
     #[Test]
     public function itBuildsWithExtraJsonEncodeOptions(): void
     {
-        $builder = new Builder();
+        $builder = new Builder;
         $javascript = $builder->build('namespace', ['test' => 'tést/tëst', 'foo' => []], JSON_FORCE_OBJECT | JSON_UNESCAPED_UNICODE);
 
         $this->assertEquals(
@@ -49,7 +49,7 @@ final class BuilderTest extends TestCase
     #[Test]
     public function itBuildsPrettyPrinted(): void
     {
-        $builder = new Builder();
+        $builder = new Builder;
         $javascript = $builder->build('name.space', ['foo' => 'bar'], JSON_PRETTY_PRINT);
 
         $this->assertEquals(
@@ -66,8 +66,8 @@ final class BuilderTest extends TestCase
     #[Test]
     public function itBuildsWithArrayableData(): void
     {
-        $builder = new Builder();
-        $javascript = $builder->build('namespace', new ArrayableStub());
+        $builder = new Builder;
+        $javascript = $builder->build('namespace', new ArrayableStub);
 
         $this->assertEquals(
             '(function(){window["namespace"]={"foo":"bar"};})();',
@@ -78,8 +78,8 @@ final class BuilderTest extends TestCase
     #[Test]
     public function itBuildsWithJsonableData(): void
     {
-        $builder = new Builder();
-        $javascript = $builder->build('namespace', new JsonableStub());
+        $builder = new Builder;
+        $javascript = $builder->build('namespace', new JsonableStub);
 
         $this->assertEquals(
             '(function(){window["namespace"]={"foo":"bar"};})();',
@@ -90,8 +90,8 @@ final class BuilderTest extends TestCase
     #[Test]
     public function itBuildsWithJsonSerializableData(): void
     {
-        $builder = new Builder();
-        $javascript = $builder->build('namespace', new JsonSerializableStub());
+        $builder = new Builder;
+        $javascript = $builder->build('namespace', new JsonSerializableStub);
 
         $this->assertEquals(
             '(function(){window["namespace"]={"foo":"bar"};})();',
@@ -104,7 +104,7 @@ final class BuilderTest extends TestCase
     {
         $this->expectExceptionObject(new \InvalidArgumentException('Malformed UTF-8 characters, possibly incorrectly encoded', 5));
 
-        $builder = new Builder();
+        $builder = new Builder;
         $builder->build('namespace', "\x80");
     }
 }
