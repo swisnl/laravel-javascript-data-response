@@ -1,11 +1,13 @@
 <?php
 
-namespace Swis\Laravel\JavaScriptData;
+namespace Swis\Laravel\JavaScriptData\Tests;
 
 use Illuminate\Routing\ResponseFactory as IlluminateResponseFactory;
 use Orchestra\Testbench\TestCase;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\MockObject;
+use Swis\Laravel\JavaScriptData\Builder;
+use Swis\Laravel\JavaScriptData\ResponseFactory;
 
 final class ResponseFactoryTest extends TestCase
 {

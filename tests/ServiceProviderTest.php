@@ -1,10 +1,11 @@
 <?php
 
-namespace Swis\Laravel\JavaScriptData;
+namespace Swis\Laravel\JavaScriptData\Tests;
 
 use Illuminate\Routing\ResponseFactory;
 use Orchestra\Testbench\TestCase;
 use PHPUnit\Framework\Attributes\Test;
+use Swis\Laravel\JavaScriptData\ServiceProvider;
 
 final class ServiceProviderTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Swis\Laravel\JavaScriptData\Stub;
+namespace Swis\Laravel\JavaScriptData\Tests\Stubs;
 
 use JsonSerializable;
 

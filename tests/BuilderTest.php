@@ -1,12 +1,13 @@
 <?php
 
-namespace Swis\Laravel\JavaScriptData;
+namespace Swis\Laravel\JavaScriptData\Tests;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Swis\Laravel\JavaScriptData\Stub\ArrayableStub;
-use Swis\Laravel\JavaScriptData\Stub\JsonableStub;
-use Swis\Laravel\JavaScriptData\Stub\JsonSerializableStub;
+use Swis\Laravel\JavaScriptData\Builder;
+use Swis\Laravel\JavaScriptData\Tests\Stubs\ArrayableStub;
+use Swis\Laravel\JavaScriptData\Tests\Stubs\JsonableStub;
+use Swis\Laravel\JavaScriptData\Tests\Stubs\JsonSerializableStub;
 
 final class BuilderTest extends TestCase
 {
