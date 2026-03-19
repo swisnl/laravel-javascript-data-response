@@ -81,6 +81,10 @@ final class ResponseFactoryTest extends TestCase
         $builder = $this->getMockBuilder(Builder::class)
             ->onlyMethods(['build'])
             ->getMock();
+        $builder
+            ->expects($this->once())
+            ->method('build')
+            ->with('namespace', [], 0);
 
         $factory = new ResponseFactory($responseFactory, $builder);
         $response = $factory->make('namespace');
@@ -97,6 +101,10 @@ final class ResponseFactoryTest extends TestCase
         $builder = $this->getMockBuilder(Builder::class)
             ->onlyMethods(['build'])
             ->getMock();
+        $builder
+            ->expects($this->once())
+            ->method('build')
+            ->with('namespace', [], 0);
 
         $factory = new ResponseFactory($responseFactory, $builder);
         $response = $factory->make('namespace', [], 500);
@@ -113,6 +121,10 @@ final class ResponseFactoryTest extends TestCase
         $builder = $this->getMockBuilder(Builder::class)
             ->onlyMethods(['build'])
             ->getMock();
+        $builder
+            ->expects($this->exactly(2))
+            ->method('build')
+            ->with('namespace', [], 0);
 
         $factory = new ResponseFactory($responseFactory, $builder);
 
@@ -152,6 +164,10 @@ final class ResponseFactoryTest extends TestCase
         $builder = $this->getMockBuilder(Builder::class)
             ->onlyMethods(['build'])
             ->getMock();
+        $builder
+            ->expects($this->once())
+            ->method('build')
+            ->with('namespace', [], 0);
 
         $factory = new ResponseFactory($responseFactory, $builder);
         $response = $factory->make('namespace', [], 200, ['X-Foo' => 'Bar']);
