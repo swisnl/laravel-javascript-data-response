@@ -8,6 +8,11 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 * Nothing.
 
+## [1.9.0] - 2026-03-19
+
+### Added
+* Added support for Laravel 13.
+
 ## [1.8.0] - 2025-02-21
 
 ### Added
