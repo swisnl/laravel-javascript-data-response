@@ -14,7 +14,7 @@ final class ServiceProviderTest extends TestCase
     }
 
     #[Test]
-    public function itMergesTheConfig(): void
+    public function it_merges_the_config(): void
     {
         $this->assertSame(
             [
@@ -30,7 +30,7 @@ final class ServiceProviderTest extends TestCase
     }
 
     #[Test]
-    public function itRegistersAResponseMacro(): void
+    public function it_registers_a_response_macro(): void
     {
         $this->assertTrue(ResponseFactory::hasMacro('javascriptData'));
     }

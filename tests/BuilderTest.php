@@ -11,7 +11,7 @@ use Swis\Laravel\JavaScriptData\Stub\JsonSerializableStub;
 final class BuilderTest extends TestCase
 {
     #[Test]
-    public function itBuilds(): void
+    public function it_builds(): void
     {
         $builder = new Builder;
         $javascript = $builder->build('namespace', ['foo' => 'bar']);
@@ -23,7 +23,7 @@ final class BuilderTest extends TestCase
     }
 
     #[Test]
-    public function itBuildsANestedNamespace(): void
+    public function it_builds_a_nested_namespace(): void
     {
         $builder = new Builder;
         $javascript = $builder->build('name.space.string', ['foo' => 'bar']);
@@ -35,7 +35,7 @@ final class BuilderTest extends TestCase
     }
 
     #[Test]
-    public function itBuildsWithExtraJsonEncodeOptions(): void
+    public function it_builds_with_extra_json_encode_options(): void
     {
         $builder = new Builder;
         $javascript = $builder->build('namespace', ['test' => 'tést/tëst', 'foo' => []], JSON_FORCE_OBJECT | JSON_UNESCAPED_UNICODE);
@@ -47,7 +47,7 @@ final class BuilderTest extends TestCase
     }
 
     #[Test]
-    public function itBuildsPrettyPrinted(): void
+    public function it_builds_pretty_printed(): void
     {
         $builder = new Builder;
         $javascript = $builder->build('name.space', ['foo' => 'bar'], JSON_PRETTY_PRINT);
@@ -64,7 +64,7 @@ final class BuilderTest extends TestCase
     }
 
     #[Test]
-    public function itBuildsWithArrayableData(): void
+    public function it_builds_with_arrayable_data(): void
     {
         $builder = new Builder;
         $javascript = $builder->build('namespace', new ArrayableStub);
@@ -76,7 +76,7 @@ final class BuilderTest extends TestCase
     }
 
     #[Test]
-    public function itBuildsWithJsonableData(): void
+    public function it_builds_with_jsonable_data(): void
     {
         $builder = new Builder;
         $javascript = $builder->build('namespace', new JsonableStub);
@@ -88,7 +88,7 @@ final class BuilderTest extends TestCase
     }
 
     #[Test]
-    public function itBuildsWithJsonSerializableData(): void
+    public function it_builds_with_json_serializable_data(): void
     {
         $builder = new Builder;
         $javascript = $builder->build('namespace', new JsonSerializableStub);
@@ -100,7 +100,7 @@ final class BuilderTest extends TestCase
     }
 
     #[Test]
-    public function itThrowsWhenJsonEncodeFailed(): void
+    public function it_throws_when_json_encode_failed(): void
     {
         $this->expectExceptionObject(new \InvalidArgumentException('Malformed UTF-8 characters, possibly incorrectly encoded', 5));
 

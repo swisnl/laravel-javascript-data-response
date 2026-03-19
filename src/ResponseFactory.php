@@ -8,12 +8,12 @@ use Illuminate\Http\Response;
 class ResponseFactory
 {
     /**
-     * @var \Illuminate\Contracts\Routing\ResponseFactory
+     * @var ResponseFactoryContract
      */
     private $responseFactory;
 
     /**
-     * @var \Swis\Laravel\JavaScriptData\Builder
+     * @var Builder
      */
     private $builder;
 

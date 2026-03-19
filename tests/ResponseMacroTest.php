@@ -19,7 +19,7 @@ final class ResponseMacroTest extends TestCase
     }
 
     #[Test]
-    public function itMakesAResponse(): void
+    public function it_makes_a_response(): void
     {
         /** @var \Illuminate\Http\Response $response */
         $response = Response::javascriptData('namespace', ['foo' => 'bar']);
